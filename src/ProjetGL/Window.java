@@ -143,8 +143,7 @@ public class Window extends JPanel implements ActionListener {
                 case "Green" :
                     g.drawImage(greenlight_r, windowsize.width-500, windowsize.height/3,126,64, this);
                     break;                
-            }
-            //g.drawImage(redlight_r, windowsize.width-300, 40*windowsize.height/100-50,126,64, this);
+            }            
              
             //Feux gauches  
             switch(t_l.getColor()){
@@ -175,15 +174,14 @@ public class Window extends JPanel implements ActionListener {
                 case "Green" :
                     g.drawImage(greenlight_d, 2*windowsize.width/3+30, windowsize.height/2+100,64,126, this);
                     break;
-            }
-            //g.drawImage(redlight_l, windowsize.width/2-500, windowsize.height/2+120,126,64, this);
+            }            
             
             //Barriere droite
             if(!b_r.getIsOpen())
-                g2d.drawLine(windowsize.width-300, 40*windowsize.height/100, windowsize.width-300, windowsize.height/2);
+                g2d.drawLine(windowsize.width-600, 40*windowsize.height/100, windowsize.width-600, windowsize.height/2);
             //Barriere gauche
             if(!b_l.getIsOpen())
-                g2d.drawLine(500, windowsize.height/2+20, 500, windowsize.height/2+100);
+                g2d.drawLine(600, windowsize.height/2+10,600, windowsize.height/2+100);
             
             
         } catch (IOException ex) {
@@ -204,9 +202,9 @@ public class Window extends JPanel implements ActionListener {
     
     @Override
     public void actionPerformed(ActionEvent ae) {                
-        if(t_r.getColor().equals("Green") || car_r.getX()!=windowsize.width-300)
+        if(t_r.getColor().equals("Green") || car_r.getX()!=windowsize.width-600)
             car_r.setX(car_r.getX()-car_r.getSpeed());                                            
-        if(t_l.getColor().equals("Green") || car_l.getX()!=300)
+        if(t_l.getColor().equals("Green") || car_l.getX()!=450)
             car_l.setX(car_l.getX()+car_l.getSpeed());                                                
         if(bi_u.getColor().equals("Green") || boat_u.getY()!=300)
             boat_u.setY(boat_u.getY()+boat_u.getSpeed());

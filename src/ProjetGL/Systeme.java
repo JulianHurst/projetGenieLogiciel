@@ -6,7 +6,6 @@
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
-import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -34,26 +33,10 @@ public class Systeme extends JFrame {
         this.setLayout(layout);
         
         add(w);
-        JPanel pan = new JPanel();
-        JButton button = new JButton("drive");
-        JButton button1 = new JButton("change");
-        pan.add(button);
+        JPanel pan = new JPanel();        
+        JButton button1 = new JButton("change");        
         pan.add(button1);
-        add(pan,BorderLayout.SOUTH);        
-        button.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e){
-               if(w.t_r.getColor().equals("Green"))
-                   w.car_r.setX(w.car_r.getX()-w.car_r.getSpeed());                                            
-               if(w.t_l.getColor().equals("Green"))
-                   w.car_l.setX(w.car_l.getX()+w.car_l.getSpeed());                                                
-               if(w.bi_u.getColor().equals("Green"))
-                   w.boat_u.setY(w.boat_u.getY()+w.boat_u.getSpeed());
-               if(w.bi_d.getColor().equals("Green"))
-                   w.boat_d.setY(w.boat_d.getY()-w.boat_d.getSpeed());               
-           } 
-        });
-        
+        add(pan,BorderLayout.SOUTH);                                
         button1.addActionListener(new ActionListener(){        
             @Override
             public void actionPerformed(ActionEvent e){
